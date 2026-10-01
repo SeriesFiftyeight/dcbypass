@@ -2,5 +2,6 @@
   "SelectedPresetId": 1,
   "AutoStartBypassOnLaunch": true,
   "StartMinimizedToTray": false,
-  "AutoStartWithWindows": false
+  "AutoStartWithWindows": false,
+  "Language": "TR"
 }

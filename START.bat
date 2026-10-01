@@ -7,17 +7,11 @@ cd /d "%~dp0"
 net session >nul 2>&1
 if %errorlevel% neq 0 (
     echo [INFO] Requesting Administrator privileges...
-    if exist "%~dp0dcbypass.exe" (
-        powershell -Command "Start-Process '%~dp0dcbypass.exe' -Verb RunAs"
-    ) else (
-        powershell -Command "Start-Process '%~dp0dist\dcbypass.exe' -Verb RunAs"
-    )
+    powershell -Command "Start-Process '%~dp0dist\dcbypass.exe' -Verb RunAs"
     exit /b
 )
 
-if exist "%~dp0dcbypass.exe" (
-    start "" "%~dp0dcbypass.exe"
-) else if exist "%~dp0dist\dcbypass.exe" (
+if exist "%~dp0dist\dcbypass.exe" (
     start "" "%~dp0dist\dcbypass.exe"
 ) else (
     dotnet run
